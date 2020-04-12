@@ -1,1 +1,1 @@
-go build -o start ../cmd
+go build -o start ./cmd
