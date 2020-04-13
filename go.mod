@@ -1,3 +1,3 @@
-module example.com/hello
+module github.com/dibikhin/firebase-template-go
 
 go 1.14
