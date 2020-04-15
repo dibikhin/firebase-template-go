@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dibikhin/firebase-template-go"
+	hello "github.com/dibikhin/firebase-template-go/internal/https"
 )
 
 func main() {
 	http.HandleFunc("/", hello.HelloWorld)
-	fmt.Println("listening on localhost:8080...")
+	fmt.Println("Listening on http://localhost:8080 ...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

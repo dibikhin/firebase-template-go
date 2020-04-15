@@ -1,1 +1,1 @@
-go build -o local_server ./cmd
+go build -o local_server ./cmd/https
