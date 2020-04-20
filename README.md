@@ -3,11 +3,17 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/dibikhin/firebase-template-go?style=flat-square)](github.com/dibikhin/firebase-template-go)
 [![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/dibikhin/firebase-template-go)
 
+## Overview
+
+The "just works" template for Firebase project: clone -> run -> deploy.
+
+Contains examples of Firebase Functions for different triggers types and other Firebase related stuff.
+
 ## Project Structure
-- `/cmd` - to run locally
-- `/deployment` - scripts to manage Functions deployments
-- `/internal` - Functions grouped by trigger type
-- `/scripts` - build/clean/test
+- `/cmd` - running locally
+- `/deployment` - managing Functions deployments
+- `/internal` - Functions by triggers
+- `/scripts` - build/clean, test
 - `firestore.indexes.json` - Firestore Indexes
 - `firestore.rules` - Firestore Security Rules
 - `storage.rules` - Storage Security Rules
@@ -23,7 +29,7 @@
 ### Start
 ```
 > ./local_server
-> Listening on localhost:8080 ...
+> Listening on http://localhost:8080 ...
 ```
 
 ### Navigate
@@ -45,10 +51,17 @@ http://localhost:8080
 # TODO
 - `DONE` Add Go badges
 - `DONE` Reorder files to `/cmd`, `/deployments`, `/internal`
-- `NEXT` Move `build` to Makefile
+- `DONE` Wrap `HelloWorld`
+- `NEXT` Add `/scripts` to Makefile
 - `NEXT` Add a Firestore function
-- Add pre-commit
+- Update the HTTPS function to worker?
+- Add a local worker?
+- Add pre-commit:
   - clean
   - lint, etc.
 - Customize deploying selected function
 - Add generation by template for HTTPS functions
+- Add loading service keys from env/files
+- Split envs for:
+  - indexes and rules
+  - functions

@@ -1,0 +1,1 @@
+gcloud projects list && gcloud config set project your_project && gcloud functions deploy Hello --runtime go113 --trigger-http --allow-unauthenticated
