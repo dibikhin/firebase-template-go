@@ -13,24 +13,25 @@ Contains examples of Firebase Functions for different triggers types and other F
 - `/cmd` - running locally
 - `/deployment` - managing Functions deployments
 - `/internal` - Functions by triggers
-- `/scripts` - build/clean, test
 - `firestore.indexes.json` - Firestore Indexes
 - `firestore.rules` - Firestore Security Rules
 - `storage.rules` - Storage Security Rules
+- `Makefile` - test/build/run/clean
 
 ## Testing
-`> ./scripts/test`
+`> make test`
 
 ## Running Function Locally
 
 ### Build
-`> ./scripts/build`
+`> make build`
 
 ### Start
-```
-> ./local_server
-> Listening on http://localhost:8080 ...
-```
+` > ./local_server // -> Listening on http:// localhost:8080 ...`
+
+OR
+
+`> make && ./local_server`
 
 ### Navigate
 http://localhost:8080
@@ -42,7 +43,7 @@ http://localhost:8080
 `> ./deployments/deploy`
 
 ### Navigate
-`https://<region>-<project>.cloudfunctions.net/HelloWorld` -> "Hey there!" and server timestamp
+`https://<region>-<project>.cloudfunctions.net/Hello` -> "Hey there!" and server timestamp
 
 ### Delete Function
 
@@ -51,8 +52,8 @@ http://localhost:8080
 # TODO
 - `DONE` Add Go badges
 - `DONE` Reorder files to `/cmd`, `/deployments`, `/internal`
-- `DONE` Wrap `HelloWorld`
-- `NEXT` Add `/scripts` to Makefile
+- `DONE` Wrap `HelloWorld` -> `Hello`
+- `DONE` Move `/scripts` to Makefile partially
 - `NEXT` Add a Firestore function
 - Update the HTTPS function to worker?
 - Add a local worker?
