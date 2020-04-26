@@ -15,6 +15,7 @@ Contains examples of Firebase Functions for different triggers types and other F
 - `/internal` - Functions by triggers
 - `firestore.indexes.json` - Firestore Indexes
 - `firestore.rules` - Firestore Security Rules
+- `function.go` - entry point
 - `storage.rules` - Storage Security Rules
 - `Makefile` - test/build/run/clean
 
@@ -27,11 +28,11 @@ Contains examples of Firebase Functions for different triggers types and other F
 `> make build`
 
 ### Start
-` > ./local_server // -> Listening on http:// localhost:8080 ...`
+` > ./local_server // -> Listening on http://localhost:8080 ...`
 
 OR
 
-`> make && ./local_server`
+`> make && make run`
 
 ### Navigate
 http://localhost:8080
@@ -54,6 +55,7 @@ http://localhost:8080
 - `DONE` Reorder files to `/cmd`, `/deployments`, `/internal`
 - `DONE` Wrap `HelloWorld` -> `Hello`
 - `DONE` Move `/scripts` to Makefile partially
+
 - `NEXT` Add a Firestore function
 - Update the HTTPS function to worker?
 - Add a local worker?

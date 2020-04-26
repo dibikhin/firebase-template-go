@@ -1,19 +1,22 @@
 .PHONY: all test build run clean
 
-all: test build
+local_server = local_server
+
+all: clean test build
 
 test:
+	@echo "\nTesting..."
 	go test -v ./...
 
 build:
 	@echo "\nBuilding..."
-	go build -o local_server ./cmd/https
+	go build -o ${local_server} ./cmd/https
 
-run:
+run: ${local_server}
 	@echo "\nRunning..."
-	./local_server
+	./${local_server}
 
-clean: local_server
+clean:
 	@echo "Cleaning up..."
-	rm local_server
+	rm -f ${local_server}
 
