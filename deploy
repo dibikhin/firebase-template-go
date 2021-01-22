@@ -1,1 +1,7 @@
-gcloud projects list && gcloud config set project your_project && gcloud functions deploy Hello --runtime go113 --trigger-http --allow-unauthenticated
+gcloud projects list && \
+gcloud config set project $1 && \
+gcloud functions deploy $2 \
+  --runtime go113 \
+  --trigger-event providers/cloud.firestore/eventTypes/document.update \
+  --trigger-resource "projects/$1/databases/(default)/documents/_test/{docId}"
+  

@@ -10,6 +10,7 @@ test:
 
 build:
 	@echo "\nBuilding..."
+	@go version
 	go build -o ${local_server} ./cmd/https
 
 run: ${local_server}
@@ -17,6 +18,5 @@ run: ${local_server}
 	./${local_server}
 
 clean:
-	@echo "Cleaning up..."
+	@echo "\nCleaning up..."
 	rm -f ${local_server}
-
